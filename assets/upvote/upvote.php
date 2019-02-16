@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $conn = mysqli_connect('localhost', 'u761899477_wang', 'Lightpower1', 'u761899477_verum');
+    $conn = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         }
@@ -50,5 +50,5 @@
             $stmt->execute();
             $stmt->close();
 
-        } 
+        }
     ?>

@@ -43,10 +43,10 @@
                                     <?php
                                         session_start();
                                         if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 86400)) {
-                                            session_unset();     // unset $_SESSION variable for the run-time 
+                                            session_unset();     // unset $_SESSION variable for the run-time
                                             session_destroy();   // destroy session data in storage
                                             }
-                                            $_SESSION['LAST_ACTIVITY'] = time(); 
+                                            $_SESSION['LAST_ACTIVITY'] = time();
                                                 if (!isset($_SESSION['CREATED'])) {
                                                 $_SESSION['CREATED'] = time();
                                             } else if (time() - $_SESSION['CREATED'] > 1800) {
@@ -139,11 +139,11 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   require "config.php";
   require "database.php";
     if(isset($_POST['title']) and isset($_POST['article'])){
-  $con = mysqli_connect('localhost', 'u761899477_wang', 'Lightpower1', 'u761899477_verum');
+			$con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
   if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
         }else{
-        
+
     }
     $nid = $_SESSION['user'];
   $value = $con->query("SELECT * FROM users WHERE id = $nid");

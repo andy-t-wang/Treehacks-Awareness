@@ -1,6 +1,6 @@
-<?php 
+<?php
             session_start();
-         $conn = new mysqli('localhost', 'u761899477_wang', 'Lightpower1', 'u761899477_verum');
+            $conn = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
          $start = $_POST['start'];
          $id = $_SESSION['user'];
          $sql = $conn->query("SELECT * FROM posts ORDER BY votes");
@@ -13,11 +13,11 @@
                             $result = $sqt->fetch_assoc();
                             $json[$key]['votetype'] = $result['vote_type'];
                         }
-    
+
                 }
             }else{
                 $json = array('max' => true);
-    
+
             }
              echo json_encode($json);
 ?>

@@ -1,10 +1,10 @@
-<?php 
+<?php
 session_start();
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 86400)) {
-    session_unset();     // unset $_SESSION variable for the run-time 
+    session_unset();     // unset $_SESSION variable for the run-time
     session_destroy();   // destroy session data in storage
     }
-    $_SESSION['LAST_ACTIVITY'] = time(); 
+    $_SESSION['LAST_ACTIVITY'] = time();
         if (!isset($_SESSION['CREATED'])) {
         $_SESSION['CREATED'] = time();
     } else if (time() - $_SESSION['CREATED'] > 1800) {
@@ -12,7 +12,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
         session_regenerate_id(true);    // change session ID for the current session and invalidate old session ID
         $_SESSION['CREATED'] = time();  // update creation time
     }
-$con = mysqli_connect('localhost', 'u761899477_wang', 'Lightpower1', 'u761899477_verum');
+    $con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
 if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
         }
@@ -24,10 +24,10 @@ $stmt->execute();
 $seeql = $stmt->get_result();
 $article = $seeql->fetch_assoc();
 $sql = $con->prepare("SELECT * FROM votes WHERE post_id= ? AND user_id = ? ORDER BY total_votes DESC");
-    if(isset($_SESSION['user'])){ 
+    if(isset($_SESSION['user'])){
         $sql->bind_param("ii", $pid, $_SESSION['user'] );
         $sql->execute();
-        $resvote = $sql->get_result();    
+        $resvote = $sql->get_result();
                 $val = $resvote->fetch_assoc();
     }
 ?>
@@ -61,7 +61,7 @@ $sql = $con->prepare("SELECT * FROM votes WHERE post_id= ? AND user_id = ? ORDER
           cursor: pointer;
           background: url("images/vote.png");
           background-position: 0 -25px;
-        } 
+        }
         .vote.on {
         background-position: 0 2px;
         }
@@ -124,7 +124,7 @@ $sql = $con->prepare("SELECT * FROM votes WHERE post_id= ? AND user_id = ? ORDER
 										</div>
                                         <article id = "cment">
                                            <br>
-                                            
+
                                         </article>
 				<!-- Footer -->
 
@@ -161,32 +161,32 @@ $sql = $con->prepare("SELECT * FROM votes WHERE post_id= ? AND user_id = ? ORDER
                             $("#message").val('');
 
                         }
-                         }); 
+                         });
 
 
                 <?php } if(!isset($_SESSION['user'])) {?>
                      $("#commentsub").click(function(e){
                         $("#message").val('');
                          alert("You must be logged in to comment");
-                     }); 
+                     });
                     <?php } ?>
                  function getComments() {
 		            $.ajax({
-		              url: "getcomments.php",  
+		              url: "getcomments.php",
 		              method: "POST",
 		              async: false,
 		              data: {id:id},
-                      dataType: "JSON",                   
+                      dataType: "JSON",
                       success: function(data)
-                      { 
+                      {
                         $.each(data, function(i, item) {
                             var str = '<h5>' + item.Name +'</h5> <p>' + item.comment +'</p> <hr>';
                             $("#cment").append(str);
                         });
 
                       }
-                    
-		            }); 
+
+		            });
             }
 		    </script>
            </script>

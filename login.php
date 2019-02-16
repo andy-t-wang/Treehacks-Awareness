@@ -1,10 +1,10 @@
 <?php
     session_start();
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 86400)) {
-        session_unset();     // unset $_SESSION variable for the run-time 
+        session_unset();     // unset $_SESSION variable for the run-time
         session_destroy();   // destroy session data in storage
     }
-    $_SESSION['LAST_ACTIVITY'] = time(); 
+    $_SESSION['LAST_ACTIVITY'] = time();
         if (!isset($_SESSION['CREATED'])) {
         $_SESSION['CREATED'] = time();
     } else if (time() - $_SESSION['CREATED'] > 1800) {
@@ -12,9 +12,9 @@
         session_regenerate_id(true);    // change session ID for the current session and invalidate old session ID
         $_SESSION['CREATED'] = time();  // update creation time
     }
-  
+
     if(isset($_POST['email']) and isset($_POST['password'])){
-      $con = mysqli_connect('localhost', 'u761899477_wang', 'Lightpower1', 'u761899477_verum');
+      $con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
       $email = $_POST['email'];
       $password = $_POST['password'];
      $password = md5($password);
@@ -60,8 +60,8 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <title>Login</title>
   </head>
-  
-  
+
+
   <body class="is-preload">
     <div id="wrapper">
     <header id="header">
@@ -86,12 +86,12 @@
           </form>
             <br>
           </span>
-          
+
         </div>
         </div>
     </div>
     </div>
-    <script type="text/javascript"> 
+    <script type="text/javascript">
     document.getElementById("myButton").onclick = function () {
         location.href = "1-register.php";
     };</script>
