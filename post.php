@@ -130,8 +130,6 @@
 
 <?php
 error_reporting(E_ALL); ini_set('display_errors', 1);
-  require "config.php";
-  require "database.php";
     if(isset($_POST['title']) and isset($_POST['article'])){
 			$con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
   if ($con->connect_error) {
@@ -149,7 +147,6 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $dorm = "";
   $year = "";
 	$badwords = array("Fuck", "Shit", "Bitch", "Hoe", "Tramp", "anal", "ass");
-
   if(isset($_POST['dorm'])){
       $dorm = $answer['user_dorm'];
   }
@@ -162,16 +159,8 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $article = $_POST['article'];
   $title = $_POST['title'];
   $date = date("F d\, Y");
-	$illegal = false;
-	foreach ($badwords as $url) {
-			if (strpos($article, $url) !== FALSE) {
-					$illegal = true;
-			}
-	}
-  if(!$illegal)){
-			$stmt->execute()
-      header('location:index.php');
-  }
+	//$illegal = false;
+	$stmt->execute()
 	header('location:index.php');
   $con->close();
 }
