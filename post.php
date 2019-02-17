@@ -63,11 +63,6 @@
 												<h3>Title:</h3>
 												<input type="text" id="title" name="title">
 												<br>
-												<select name="topic-category" id="topic-category">
-													<option value="">- Topic -</option>
-													<option value="1">Should Free Speech Be Limited on Campus</option>
-												</select>
-												<br>
 												<h3>Tags</h3>
 											</div>
 											<!-- Break -->

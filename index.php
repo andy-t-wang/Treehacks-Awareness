@@ -59,7 +59,7 @@
         </div>
         </div>
         <div class="card add_to_cart">
-        <img class="card-img-top" src="images/pic2.jpeg" alt="Card image cap">
+        <img class="card-img-top" src="images/roble.png" alt="Card image cap">
         <div class="card-body">
           <a href="main.php?verum=<?=urlencode('Roble') ?>"><h3 class="card-title">Roble Dorm</h3></a>
         </div>
@@ -81,7 +81,7 @@
       <br>
       <div class="card-deck">
           <div class="card add_to_cart">
-          <img class="card-img-top" src="images/pic1.jpg" alt="Card image cap">
+          <img class="card-img-top" src="images/neighborhood.jpg" alt="Card image cap">
           <div class="card-body">
             <a href="main.php?verum=<?=urlencode('Canyon Gates Community') ?>"><h3 class="card-title">Canyon Gates Community</h3></a>
           </div>
