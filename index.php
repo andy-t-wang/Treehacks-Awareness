@@ -48,9 +48,9 @@
 		<a href="index.php" class="logo fadeInUp animated">Verum</a>
 	</header>
   <div class="animated fadeInUp" style = "padding-left:10%; padding-right: 10%; padding-bottom: 10%">
-    <div class="">
+    <p>
       <?php echo $response->getBody(); ?>
-    </div>
+    </p>
     <div class="card-deck">
         <div id = "test" class="card add_to_cart">
         <img class="card-img-top" src="images/pic1.jpg" alt="Card image cap">
