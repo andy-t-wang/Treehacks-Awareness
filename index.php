@@ -49,7 +49,7 @@
   <div class="animated fadeInUp" style = "padding-left:10%; padding-right: 10%; padding-bottom: 10%">
     <div class="card-deck">
         <div id = "test" class="card add_to_cart">
-        <img class="card-img-top" src="images/pic1.jpg" alt="Card image cap">
+        <img class="card-img-top" src="images/neighborhood.jpg" alt="Card image cap">
         <div class="card-body">
           <a href="main.php?verum=<?=urlencode('Stanford') ?>"><h3 class="card-title">Stanford</h3></a>
         </div>
@@ -89,7 +89,7 @@
           </div>
           </div>
           <div class="card add_to_cart">
-          <img class="card-img-top" src="images/pic2.jpeg" alt="Card image cap">
+          <img class="card-img-top" src="images/Soccer.jpg" alt="Card image cap">
           <div class="card-body">
             <a href="main.php?verum=<?=urlencode('Stanford Club Soccer') ?>"><h3 class="card-title">Stanford Club Soccer</h3></a>
           </div>
