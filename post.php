@@ -153,6 +153,7 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $stmt->bind_param("ssssss", $title, $date, $article, $name, $dorm, $year);
   $name = "Anonymous";
   $dorm = "";
+	$badwords = array("Fuck", "Shit", "Bitch", "Hoe", "Tramp", "anal", "ass");
   $year = "";
   if(isset($_POST['dorm'])){
       $dorm = $answer['user_dorm'];
