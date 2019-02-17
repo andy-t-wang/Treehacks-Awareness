@@ -148,6 +148,8 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $name = "Anonymous";
   $dorm = "";
   $year = "";
+	$badwords = array("Fuck", "Shit", "Bitch", "Hoe", "Tramp", "anal", "ass");
+
   if(isset($_POST['dorm'])){
       $dorm = $answer['user_dorm'];
   }
@@ -160,9 +162,17 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $article = $_POST['article'];
   $title = $_POST['title'];
   $date = date("F d\, Y");
-  if($stmt->execute()){
+	$illegal = false;
+	foreach ($badwords as $url) {
+			if (strpos($article, $url) !== FALSE) {
+					$illegal = true;
+			}
+	}
+  if(!$illegal)){
+			$stmt->execute()
       header('location:index.php');
   }
+	header('location:index.php');
   $con->close();
 }
  ?>
