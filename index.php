@@ -103,8 +103,8 @@
             <h3 class="card-title">Curated Posts</h3>
             <ol>
               <ul class="txt"><?php echo $one?><h6>View Today: 532</h6></ul>
-              <ul class="txt">Roble security is understaffed<h6>Views Today: 487</h6></ul>
-              <ul class="txt">New national tax reform will raise tuition <h6>Views Today: 433</h6></ul>
+              <ul class="txt"><?php echo $two?><h6>Views Today: 487</h6></ul>
+              <ul class="txt"><?php echo $three?><h6>Views Today: 433</h6></ul>
             </ol>
           </div>
           </div>
