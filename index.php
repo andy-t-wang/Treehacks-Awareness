@@ -102,7 +102,7 @@
           <div class="card-body">
             <h3 class="card-title">Curated Posts</h3>
             <ol>
-              <ul class="txt"><?php echo $one?><h6>View Today: 532</h6></ul>
+              <a href="article.php?posters=56"><ul class="txt"><?php echo $one?><h6>View Today: 532</h6></ul></a>
               <ul class="txt"><?php echo $two?><h6>Views Today: 487</h6></ul>
               <ul class="txt"><?php echo $three?><h6>Views Today: 433</h6></ul>
             </ol>
