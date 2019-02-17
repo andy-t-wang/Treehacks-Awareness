@@ -30,6 +30,7 @@
 						<nav id="nav" style="background-color:rgb(30,37,45);">
 							<ul class="links mainwordsli">
 								<li><a href="index.php">The Verum</a></li>
+								<li><a href="about.html">About</a></li>
 								<li><a href="index.php">Editor's Picks</a></li>
 								<li class="active"><a href="login.php">Post</a></li>
 							</ul>
@@ -61,6 +62,11 @@
 											<div class="col-12">
 												<h3>Title:</h3>
 												<input type="text" id="title" name="title">
+												<br>
+												<select name="topic-category" id="topic-category">
+													<option value="">- Topic -</option>
+													<option value="1">Should Free Speech Be Limited on Campus</option>
+												</select>
 												<br>
 												<h3>Tags</h3>
 											</div>
@@ -130,6 +136,8 @@
 
 <?php
 error_reporting(E_ALL); ini_set('display_errors', 1);
+  require "config.php";
+  require "database.php";
     if(isset($_POST['title']) and isset($_POST['article'])){
 			$con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
   if ($con->connect_error) {
@@ -146,7 +154,6 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $name = "Anonymous";
   $dorm = "";
   $year = "";
-	$badwords = array("Fuck", "Shit", "Bitch", "Hoe", "Tramp", "anal", "ass");
   if(isset($_POST['dorm'])){
       $dorm = $answer['user_dorm'];
   }
@@ -159,9 +166,9 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $article = $_POST['article'];
   $title = $_POST['title'];
   $date = date("F d\, Y");
-	//$illegal = false;
-	$stmt->execute()
-	header('location:index.php');
+  if($stmt->execute()){
+      header('location:index.php');
+  }
   $con->close();
 }
  ?>
