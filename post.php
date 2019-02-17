@@ -30,7 +30,6 @@
 						<nav id="nav" style="background-color:rgb(30,37,45);">
 							<ul class="links mainwordsli">
 								<li><a href="index.php">The Verum</a></li>
-								<li><a href="about.html">About</a></li>
 								<li><a href="index.php">Editor's Picks</a></li>
 								<li class="active"><a href="login.php">Post</a></li>
 							</ul>

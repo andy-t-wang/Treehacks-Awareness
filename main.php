@@ -95,7 +95,6 @@
 					<nav id="nav" style="background-color:rgb(30,37,45);">
 						<ul class="links mainwordsli">
 							<li class="active"><a href="index.php">The Verum</a></li>
-							<li><a href="about.html">About</a></li>
 							<li><a href="#">Editor's Picks</a></li>
 							<li><a href="post.php">Post</a></li>
 							<?php  if (isset($_SESSION['user'])) {
