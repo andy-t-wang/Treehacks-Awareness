@@ -12,7 +12,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
         session_regenerate_id(true);    // change session ID for the current session and invalidate old session ID
         $_SESSION['CREATED'] = time();  // update creation time
     }
-    $con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
+    $con = mysqli_connect('null', 'null', 'null', 'null');
 if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
         }

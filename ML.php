@@ -58,7 +58,7 @@ catch (HttpException $ex)
 {
     echo $ex;
 }
-$con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
+$con = mysqli_connect('null', 'null', 'null', 'null');
 $relevant = $con->query("SELECT * FROM posts ORDER BY votes DESC LIMIT 0,10");
 $one = $row['post'];
 $two = $row['post'];

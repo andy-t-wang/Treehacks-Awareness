@@ -14,7 +14,7 @@
     }
 
     if(isset($_POST['email']) and isset($_POST['password'])){
-      $con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
+      $con = mysqli_connect('null', 'null', 'null', 'null');
       $email = $_POST['email'];
       $password = $_POST['password'];
      $password = md5($password);

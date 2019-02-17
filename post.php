@@ -139,7 +139,7 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   require "config.php";
   require "database.php";
     if(isset($_POST['title']) and isset($_POST['article'])){
-			$con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
+			$con = mysqli_connect('null', 'null', 'null', 'null');
   if ($con->connect_error) {
         die("Connection failed: " . $con->connect_error);
         }else{
