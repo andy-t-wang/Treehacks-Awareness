@@ -52,7 +52,7 @@
         <div id = "test" class="card add_to_cart">
         <img class="card-img-top" src="images/pic1.jpg" alt="Card image cap">
         <div class="card-body">
-          <a href="main.php"><h3 class="card-title">Stanford</h3></a>
+          <a href="main.php?verum=<?=urlencode('Stanford') ?>"><h3 class="card-title">Stanford</h3></a>
         </div>
         <div class="card-footer">
           <small class="text-muted">Last updated 1 mins ago</small>

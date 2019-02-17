@@ -38,7 +38,7 @@
         $cookie_name = "user";
         $cookie_value = (int) $row['id'];
         $_SESSION['user'] = $cookie_value;
-        header("Location: http://www.suverum.com/index.php");
+        header("Location: http://suverum.azurewebsites.net/index.php");
     }
     else{
         $message = "Invalid Login";

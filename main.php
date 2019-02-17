@@ -81,7 +81,7 @@
 				</nav>
 				<!-- Intro -->
 					<div id="intro">
-						<h1 style="color: #1E252D">Verum</h1>
+						<h1 style="color: #1E252D"><?php echo $_GET['verum'];?> </h1>
 						<ul class="actions">
 							<li><a href="#header" style="background-color:rgb(30,37,45);"class="button icon solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
