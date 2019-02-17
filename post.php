@@ -168,16 +168,19 @@ error_reporting(E_ALL); ini_set('display_errors', 1);
   $title = $_POST['title'];
   $date = date("F d\, Y");
 	$temp = $_POST['article'];
+	$pass = true;
 	foreach ($badwords as $url) {
     //if (strstr($string, $url)) { // mine version
     if (strpos($temp, $url) !== FALSE) { // Yoshi version
-				header('location:index.php');
+				$pass = false;
 				break;
     }
 	}
-  if($stmt->execute()){
-      header('location:index.php');
-  }
+	if($pass){
+	  if($stmt->execute()){
+	      header('location:index.php');
+	  }
+	}
   $con->close();
 }
  ?>
