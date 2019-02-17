@@ -86,6 +86,5 @@ while($row = $relevant->fetch_assoc()){
   }
   if(count == 3) break;
 }
-echo $three;
 
 ?>
