@@ -1,8 +1,10 @@
 <?php
 // This sample uses the Apache HTTP client from HTTP Components (http://hc.apache.org/httpcomponents-client-ga/)
-require_once 'vendor/pear/http_request2/HTTP/Request2.php';
+require __DIR__ . '/vendor/autoload.php';
 
-$request = new Http_Request2('https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases');
+
+
+$request = new HTTP_Request2('https://westus.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases');
 $url = $request->getUrl();
 
 $headers = array(
