@@ -23,7 +23,7 @@ $request->setMethod(HTTP_Request2::METHOD_POST);
 
 // Request body
 $request->setBody(
-  '{"documents": [
+  {"documents": [
     {
       "language": "en",
       "id": "1",
@@ -39,7 +39,7 @@ $request->setBody(
       "id": "3",
       "text": "Engineering is becoming a negative aspect in terms of mental health"
     }
-    ]}'
+    ]}
 );
 
 try
