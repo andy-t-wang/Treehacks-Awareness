@@ -24,7 +24,7 @@ $url->setQueryVariables($parameters);
 $request->setMethod(HTTP_Request2::METHOD_POST);
 
 // Request body
-$request->setBody(
+$request->setBody(//sample user searches in the last week
   '{"documents": [
     {
       "language": "en",
@@ -47,11 +47,45 @@ $request->setBody(
 try
 {
     $response = $request->send();
-    echo $response->getBody();
+    $result = $response->getBody();
+    //this is the data for some reason I cant parse it right now so for the demo this will just be the data manually inputted
+    $temp = array("essential component of better economic climate","Tax reform","future","affordable housing","Santa Clara County","Stanford", "negative aspect","terms of mental health","Engineering");
+
+
+    //$a = json_decode($response, true);
 }
 catch (HttpException $ex)
 {
     echo $ex;
 }
+$con = mysqli_connect('suverum-mysqldbserver.mysql.database.azure.com', 'andywang@suverum-mysqldbserver', 'Lightpower1', 'suverumdatabase');
+$relevant = $con->query("SELECT * FROM posts ORDER BY votes DESC LIMIT 0,10");
+$one = $row['post'];
+$two = $row['post'];
+$three;
+$count = 0;
+while($row = $relevant->fetch_assoc()){
+  $current_num = 0;
+  for($i = 0; $i < 9; $i++){
+    $current_num = $current_num + substr_count($row['post'], $temp[$i]);
+    if($current_num > 3){
+      if($count == 1){
+        $one = $row['title'];
+        $count++;
+        break;
+      } elseif ($count == 2) {
+        $two = $row['title'];
+        $count++;
+        break;
+      } else{
+        $three = $row['title'];
+        $count++;
+        break;
+      }
+    }
+  }
+  if(count == 3) break;
+}
+echo $three;
 
 ?>

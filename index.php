@@ -15,6 +15,7 @@
     if(!isset($_SESSION['user'])){
       header('location:login.php');
     }
+    include(ML.php);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -101,7 +102,7 @@
           <div class="card-body">
             <h3 class="card-title">Curated Posts</h3>
             <ol>
-              <ul class="txt">Should Stanford sue SC county?<h6>View Today: 532</h6></ul>
+              <ul class="txt"><?php echo $one?><h6>View Today: 532</h6></ul>
               <ul class="txt">Roble security is understaffed<h6>Views Today: 487</h6></ul>
               <ul class="txt">New national tax reform will raise tuition <h6>Views Today: 433</h6></ul>
             </ol>
@@ -110,11 +111,6 @@
         </div>
       </div>
     </div>
-    <script type="text/javascript">
-    document.getElementsByid("test").onclick = function () {
-        location.href = "/index.php";
-    };
-  </script>
     <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
